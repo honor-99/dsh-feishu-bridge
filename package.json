@@ -1,0 +1,70 @@
+{
+  "name": "@local/dsh-feishu-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Feishu/Lark <-> DeepSeek Harness bridge: drive DSH sessions from Feishu over the bot long connection, mirroring the conversation back into Feishu.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honor-99/dsh-feishu-bridge.git"
+  },
+  "homepage": "https://github.com/honor-99/dsh-feishu-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/honor-99/dsh-feishu-bridge/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "feishu",
+    "lark",
+    "bot",
+    "agent",
+    "remote-control",
+    "long-connection"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "bridge.js",
+    "lark.js",
+    "store.js",
+    "util.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node scripts/test-routing.mjs",
+    "selftest": "node scripts/selftest.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": ">=3.18.5"
+  },
+  "devDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.5"
+  }
+}

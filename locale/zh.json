@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "飞书远程桥接",
+    "description": "用飞书长连接驱动 DeepSeek Harness 会话：飞书发消息即执行，会话记录在 DSH 和飞书双端可见。"
+  }
+}

@@ -1,0 +1,15 @@
+# Mount the Feishu bridge in the profile that installs this bundle.
+# lark-cli is auto-detected (PATH -> packaged @larksuite/cli entry).
+# Set nodePath + cliScript only to pin an exact CLI installation.
+- insert:
+    - id: feishu-bridge
+      name: '@local/dsh-feishu-bridge'
+      config:
+        # Where the agent works. Point it at your own project directory.
+        cwd: 'D:\path\to\your\project'
+        # Deny by default: only these Feishu open_ids may drive this machine.
+        # Replace the placeholder — send the bot any message and it replies with
+        # the exact value to paste here.
+        allowOpenIds:
+          - ou_REPLACE_WITH_YOUR_OPEN_ID
+        workspaceTitle: 'Feishu'
