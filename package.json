@@ -2,7 +2,7 @@
   "name": "@honor-99/dsh-feishu-bridge",
   "version": "0.1.1",
   "type": "module",
-  "description": "Feishu/Lark <-> DeepSeek Harness bridge: drive DSH sessions from Feishu over the bot long connection, mirroring the conversation back into Feishu.",
+  "description": "飞书/Lark ↔ DeepSeek Harness 桥接：用飞书远程驱动本机 DSH 会话，双端共享同一份会话记录，无需公网 IP 或内网穿透（Feishu/Lark bridge for DeepSeek Harness）",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -45,7 +45,8 @@
     "locale/*.json",
     "icon.svg",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "CONTRIBUTING.md"
   ],
   "dsh": {
     "bundle": {
