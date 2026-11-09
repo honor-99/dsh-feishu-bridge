@@ -354,3 +354,12 @@ bridge.remounted config write                                  # 热重载
 plugin.mounted {"build":"b5","routes":1,"overlay":{...}}       # 重启后覆盖层被读回
 bridge.started {"bindings":4}                                  # 长连接恢复
 ```
+
+## 反馈与联系
+
+- 问题与建议：<https://github.com/honor-99/dsh-feishu-bridge/issues>
+- 邮箱：qwerhyc@163.com
+- npm：<https://www.npmjs.com/package/@honor-99/dsh-feishu-bridge>
+
+> 提交作者统一使用 GitHub 的 noreply 地址（`34311832+honor-99@users.noreply.github.com`），
+> 因此提交历史中不出现真实邮箱；需要联系请用上面的地址。

@@ -76,6 +76,32 @@ npm run selftest -- oc_你的chat_id
 Select-String -Path *.js,*.yml,*.json,scripts/*.mjs,README.md -Pattern 'ou_aba','oc_','cli_a92','C:\\Users','npm_'
 ```
 
+### 提交身份：只用仓库级 noreply，不要改全局
+
+本仓库显式使用**仓库级**身份，写在 `.git/config`：
+
+```powershell
+git config user.email        # 应为 34311832+honor-99@users.noreply.github.com
+git config --show-origin user.email   # 应显示来源是 .git/config，而不是 ~/.gitconfig
+```
+
+原因：
+
+- 这是**公开仓库**，提交里的作者邮箱会永久公开；用真实邮箱（公司或个人）会长期被采集；
+- noreply 里的数字前缀是账号 ID，GitHub 仍能正确归属提交与贡献图；
+- 本机**全局**身份是公司邮箱，Gerrit 等平台依赖它 ——**绝对不要**执行
+  `git config --global user.email ...` 覆盖，否则会波及这台机器上所有仓库。
+
+两个注意点：
+
+1. `.git/config` **不随仓库分发**。新 clone 到别的机器后没有这条配置，会回落到全局公司邮箱。
+   提交前务必确认上面两条命令的输出。
+2. 一旦把真实邮箱提交进历史，唯一清理方式是改写历史 + force push，
+   还会牵连 tag 与 npm 上的 `gitHead`（本仓库已经历过一次，代价见第 5 节）。
+
+需要在提交之外留下联系方式时，写到 `package.json` 的 `author` 字段或 README 的
+「反馈与联系」一节，不要写进提交身份。
+
 ## 5. 发布流程（三连）
 
 版本号与 git tag 必须与 npm 上的 `gitHead` 三方对齐。标准动作只有三条：
