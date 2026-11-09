@@ -202,33 +202,36 @@ CLI 会直接报 `failed_precondition` 并退出——插件会记录一次
 
 ## 安装
 
-**从 GitHub 安装（推荐）**
+**从 npm 安装（推荐）**——在 DSH 里让 `plugin_manager` 按包名安装，它会拉取并挂载 bundle：
+
+```
+plugin_manager  action: install_bundle   target: @honor-99/dsh-feishu-bridge
+```
+
+**从 GitHub 安装**
 
 ```bash
 git clone git@github.com:honor-99/dsh-feishu-bridge.git
 ```
 
-然后在 DSH 里让 `plugin_manager` 以该目录安装：
-
 ```
 plugin_manager  action: install_bundle   target: <克隆下来的绝对路径>
 ```
 
-**本地开发**
-
-```
-plugin_manager  action: install_bundle   target: <本仓库绝对路径>
-```
+**本地开发**：同样用绝对路径安装。profile 里会记成 `link:<路径>`，改完源码重载插件即生效。
 
 依赖：Node ≥ 22、`lark-cli`（1.0.96 已验证）、DSH host 侧 `sessionController` 与 `workspaceRegistry`。
 
-安装前请先改 `cordis.patch.yml` 里的两个占位值：
+安装后请改 `cordis.patch.yml`（或直接在插件配置页改）两个值：
 
 ```yaml
 cwd: 'D:\path\to\your\project'        # 你的项目目录
 allowOpenIds:
   - ou_REPLACE_WITH_YOUR_OPEN_ID      # 给机器人发任意消息，它会把这个值回给你
 ```
+
+> 命名说明：npm 上 `dsh-feishu-bridge` 已被另一位作者占用（功能类似），本插件发布在
+> `@honor-99/` 作用域下，两者不是同一个包。
 
 ## 已验证 / 未验证
 

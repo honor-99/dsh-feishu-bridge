@@ -3,7 +3,7 @@
 # Set nodePath + cliScript only to pin an exact CLI installation.
 - insert:
     - id: feishu-bridge
-      name: '@local/dsh-feishu-bridge'
+      name: '@honor-99/dsh-feishu-bridge'
       config:
         # Where the agent works. Point it at your own project directory.
         cwd: 'D:\path\to\your\project'
