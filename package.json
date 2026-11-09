@@ -1,6 +1,6 @@
 {
   "name": "@honor-99/dsh-feishu-bridge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Feishu/Lark <-> DeepSeek Harness bridge: drive DSH sessions from Feishu over the bot long connection, mirroring the conversation back into Feishu.",
   "license": "MIT",
