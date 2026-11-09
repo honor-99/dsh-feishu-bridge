@@ -202,7 +202,15 @@ CLI 会直接报 `failed_precondition` 并退出——插件会记录一次
 
 ## 安装
 
-**从 npm 安装（推荐）**——在 DSH 里让 `plugin_manager` 按包名安装，它会拉取并挂载 bundle：
+**适用 DSH 版本：`0.2.1-rc.5`（开发者预览期，插件 API 可能随版本变化）。**
+
+**从 npm 安装（推荐）**
+
+```bash
+dsh plugin --profile web add @honor-99/dsh-feishu-bridge
+```
+
+如果装完后 bundle 未被自动选中，在 DSH 里用一次 `plugin_manager` 补上选择（它会同时完成安装与 bundle 选择）：
 
 ```
 plugin_manager  action: install_bundle   target: @honor-99/dsh-feishu-bridge
